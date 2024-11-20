@@ -8,7 +8,7 @@ export class MyElement extends LitElement {
   };
 
   _continentsTask = new Task(this, {
-    task: async ([continents], { signal }) => {
+    task: async ([], { signal }) => {
       const response = await fetch(
         "https://countries.trevorblades.com/graphql",
         {
@@ -25,7 +25,7 @@ export class MyElement extends LitElement {
 
       return response.json();
     },
-    args: () => [this.continents],
+    args: () => [],
   });
 
   render() {
